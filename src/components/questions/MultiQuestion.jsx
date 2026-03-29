@@ -9,7 +9,7 @@ export default function MultiQuestion({ question, value = [], onChange }) {
   };
 
   return (
-    <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+    <div className="choice-options">
       {question.options.map((opt) => {
         const active = value.includes(opt);
         return (

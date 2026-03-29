@@ -2,7 +2,7 @@ import { colors } from '../../styles/tokens';
 
 export default function ScaleQuestion({ question, value, onChange }) {
   return (
-    <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+    <div className="scale-options">
       {question.options.map((opt, i) => {
         const val = i + 1;
         const active = value === val;
@@ -13,9 +13,6 @@ export default function ScaleQuestion({ question, value, onChange }) {
             onClick={() => onChange(val)}
             aria-pressed={active}
             style={{
-              flex: '1 1 0',
-              minWidth: 56,
-              padding: '12px 6px',
               border: active
                 ? `2px solid ${colors.indigo}`
                 : `1px solid ${colors.border}`,
@@ -25,7 +22,6 @@ export default function ScaleQuestion({ question, value, onChange }) {
                 : colors.white,
               color: active ? colors.indigo : colors.sub,
               fontWeight: active ? 700 : 400,
-              fontSize: 13,
               cursor: 'pointer',
               transition: 'all 0.2s ease',
               transform: active ? 'scale(1.03)' : 'scale(1)',

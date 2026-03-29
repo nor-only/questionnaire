@@ -2,7 +2,7 @@ import { colors } from '../../styles/tokens';
 
 export default function SingleQuestion({ question, value, onChange }) {
   return (
-    <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+    <div className="choice-options">
       {question.options.map((opt) => {
         const active = value === opt;
         return (

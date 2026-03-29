@@ -146,11 +146,115 @@ textarea:focus {
 }
 
 /* ===================================
+   選択肢ボタン共通
+   =================================== */
+
+.scale-options {
+  display: flex;
+  gap: 6px;
+}
+
+.scale-options > button {
+  white-space: nowrap;
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 10px 4px;
+  font-size: 13px;
+}
+
+.choice-options {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.choice-options > button {
+  white-space: nowrap;
+}
+
+/* ===================================
+   質問カード
+   =================================== */
+
+.question-card {
+  padding: 22px 26px;
+}
+
+.question-body {
+  margin-left: 42px;
+}
+
+.question-desc {
+  margin: 2px 0 16px 42px;
+}
+
+.question-header-icon {
+  width: 30px;
+  height: 30px;
+  font-size: 12px;
+}
+
+/* ===================================
    レスポンシブ
    =================================== */
 
 @media (max-width: 480px) {
   body {
     font-size: 14px;
+  }
+
+  /* カード余白を縮小 */
+  .question-card {
+    padding: 16px 14px;
+  }
+
+  /* 質問番号アイコンを小さく、本文の左マージンを詰める */
+  .question-header-icon {
+    width: 26px;
+    height: 26px;
+    font-size: 11px;
+  }
+
+  .question-body {
+    margin-left: 0;
+  }
+
+  .question-desc {
+    margin-left: 38px;
+    margin-bottom: 12px;
+  }
+
+  /* スケール選択肢: 小さい画面でも1行に収める */
+  .scale-options {
+    gap: 4px;
+  }
+
+  .scale-options > button {
+    padding: 8px 2px;
+    font-size: 11px;
+    border-radius: 8px;
+  }
+
+  /* チップ型選択肢 */
+  .choice-options {
+    gap: 6px;
+  }
+
+  .choice-options > button {
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .scale-options > button {
+    padding: 7px 1px;
+    font-size: 10px;
+    border-radius: 6px;
+  }
+
+  .choice-options > button {
+    padding: 7px 10px;
+    font-size: 11px;
   }
 }

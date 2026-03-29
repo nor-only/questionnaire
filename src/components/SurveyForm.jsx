@@ -76,7 +76,7 @@ export default function SurveyForm({ onSubmit }) {
     <>
       <ProgressBar current={answeredCount} total={questions.length} />
 
-      <div style={{ maxWidth: 680, margin: '0 auto', padding: '0 20px' }}>
+      <div style={{ maxWidth: 680, margin: '0 auto', padding: '0 12px' }}>
         {/* ヘッダー */}
         <div
           className="fade-in-up"
@@ -176,10 +176,9 @@ export default function SurveyForm({ onSubmit }) {
           return (
             <div
               key={q.id}
-              className="fade-in-up"
+              className="fade-in-up question-card"
               style={{
                 marginBottom: 24,
-                padding: '22px 26px',
                 borderRadius: 16,
                 border: `1px solid ${isAnswered ? `${colors.indigo}30` : colors.border}`,
                 background: colors.white,
@@ -229,7 +228,7 @@ export default function SurveyForm({ onSubmit }) {
                   marginBottom: 6,
                 }}
               >
-                <GradientCircle size={30} c1={grad.c1} c2={grad.c2}>
+                <GradientCircle className="question-header-icon" c1={grad.c1} c2={grad.c2}>
                   <span
                     style={{
                       fontSize: 12,
@@ -264,15 +263,15 @@ export default function SurveyForm({ onSubmit }) {
                 </h3>
               </div>
               <p
+                className="question-desc"
                 style={{
                   fontSize: 12,
                   color: colors.muted,
-                  margin: '2px 0 16px 42px',
                 }}
               >
                 {q.desc}
               </p>
-              <div style={{ marginLeft: 42 }}>{renderQuestion(q)}</div>
+              <div className="question-body">{renderQuestion(q)}</div>
             </div>
           );
         })}
