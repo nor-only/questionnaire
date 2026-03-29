@@ -5,7 +5,7 @@ import SurveyForm from './components/SurveyForm';
 import ThankYou from './components/ThankYou';
 import AdminView from './components/AdminView';
 
-const ADMIN_PASSWORD = 'AI3in123c';
+const ADMIN_PASSWORD = 'ai3in123c';
 
 export default function App() {
   const [view, setView] = useState('form'); // form | thanks | admin
