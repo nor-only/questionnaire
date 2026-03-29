@@ -90,7 +90,6 @@ export default function App() {
         minHeight: '100vh',
         background: colors.bg,
         position: 'relative',
-        overflow: 'hidden',
       }}
     >
       {/* トップグラデーションバー */}
