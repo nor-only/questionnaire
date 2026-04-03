@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd \"/Users/nori/Library/CloudStorage/OneDrive-株式会社タイヨー通信/★My_Works/AIさんいん事業関連/★開発関連/TEST_01/アンケート\" && rm -rf node_modules && npm install 2>&1)",
+      "Bash(cd \"/Users/nori/Library/CloudStorage/OneDrive-株式会社タイヨー通信/★My_Works/AIさんいん事業関連/★開発関連/TEST_01/アンケート\" && npm run build 2>&1)",
+      "Bash(npx vite:*)",
+      "Bash(gh repo:*)",
+      "Bash(gh api:*)",
+      "Bash(gh run:*)"
+    ]
+  }
+}
