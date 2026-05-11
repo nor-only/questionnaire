@@ -58,7 +58,14 @@ export default function AdminView({ responses, onBack, onReset }) {
   return (
     <div
       className="fade-in"
-      style={{ maxWidth: 740, margin: '0 auto', padding: '0 20px' }}
+      style={{
+        maxWidth: 740,
+        margin: '0 auto',
+        padding: '0 16px',
+        width: '100%',
+        boxSizing: 'border-box',
+        overflowX: 'hidden',
+      }}
     >
       {/* ヘッダー */}
       <div
@@ -354,11 +361,14 @@ function Section({ title, children }) {
     <div
       style={{
         marginBottom: 24,
-        padding: '20px 20px',
+        padding: '20px 18px',
         borderRadius: 14,
         border: `1px solid ${colors.border}`,
         background: colors.white,
         boxShadow: '0 1px 3px rgba(0,0,0,0.04)',
+        maxWidth: '100%',
+        overflowX: 'hidden',
+        boxSizing: 'border-box',
       }}
     >
       <h4
@@ -387,11 +397,13 @@ function BarItem({ name, count, total, maxWidth, gradient }) {
         alignItems: 'center',
         gap: 10,
         marginBottom: 8,
+        flexWrap: 'wrap',
       }}
     >
       <div
         style={{
-          width: Math.max(pct * maxWidth, 24),
+          width: `clamp(24px, ${Math.max(pct * 100, 8)}%, ${maxWidth}px)`,
+          flexShrink: 0,
           height: 24,
           borderRadius: 6,
           background: gradient,
@@ -400,6 +412,7 @@ function BarItem({ name, count, total, maxWidth, gradient }) {
           alignItems: 'center',
           justifyContent: 'flex-end',
           paddingRight: 6,
+          boxSizing: 'border-box',
         }}
       >
         <span
@@ -412,7 +425,15 @@ function BarItem({ name, count, total, maxWidth, gradient }) {
           {Math.round(pct * 100)}%
         </span>
       </div>
-      <span style={{ fontSize: 12, color: colors.text, fontWeight: 500 }}>
+      <span
+        style={{
+          fontSize: 12,
+          color: colors.text,
+          fontWeight: 500,
+          minWidth: 0,
+          overflowWrap: 'anywhere',
+        }}
+      >
         {name}
         <span style={{ color: colors.muted, marginLeft: 4 }}>({count})</span>
       </span>

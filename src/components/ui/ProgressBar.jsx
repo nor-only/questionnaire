@@ -11,8 +11,10 @@ export default function ProgressBar({ current, total }) {
         zIndex: 50,
         background: `${colors.white}ee`,
         backdropFilter: 'blur(8px)',
-        padding: '12px 20px',
+        padding: '12px 16px',
         borderBottom: `1px solid ${colors.border}`,
+        width: '100%',
+        boxSizing: 'border-box',
       }}
     >
       <div
@@ -22,6 +24,8 @@ export default function ProgressBar({ current, total }) {
           display: 'flex',
           alignItems: 'center',
           gap: 12,
+          width: '100%',
+          minWidth: 0,
         }}
       >
         <div

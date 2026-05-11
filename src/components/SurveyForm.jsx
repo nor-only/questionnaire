@@ -76,7 +76,16 @@ export default function SurveyForm({ onSubmit }) {
     <>
       <ProgressBar current={answeredCount} total={questions.length} />
 
-      <div style={{ maxWidth: 680, margin: '0 auto', padding: '0 12px' }}>
+      <div
+        style={{
+          maxWidth: 680,
+          margin: '0 auto',
+          padding: '0 12px',
+          width: '100%',
+          overflowX: 'hidden',
+          boxSizing: 'border-box',
+        }}
+      >
         {/* ヘッダー */}
         <div
           className="fade-in-up"
@@ -85,6 +94,9 @@ export default function SurveyForm({ onSubmit }) {
             marginBottom: 36,
             marginTop: 24,
             position: 'relative',
+            overflow: 'hidden',
+            paddingTop: 12,
+            paddingBottom: 12,
           }}
         >
           <GradientRing

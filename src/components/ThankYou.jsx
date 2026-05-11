@@ -6,9 +6,12 @@ export default function ThankYou({ onBackToForm }) {
       className="fade-in-up"
       style={{
         textAlign: 'center',
-        padding: '80px 20px',
+        padding: 'clamp(40px, 10vw, 80px) clamp(16px, 5vw, 24px)',
         maxWidth: 520,
         margin: '0 auto',
+        width: '100%',
+        boxSizing: 'border-box',
+        overflowX: 'hidden',
       }}
     >
       {/* チェックマークアイコン */}
